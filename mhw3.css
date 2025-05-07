@@ -1,0 +1,336 @@
+@import url('https://fonts.cdnfonts.com/css/amazon-ember');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Amazon Ember';
+}
+
+a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 900;
+    font-size: 15px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #141920;
+}
+
+.top-left {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.ricerca {
+    width: 40%;
+    height: 50px;
+    background-color: #E6E6E6;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    position: relative;
+}
+
+.ricerca input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    outline: none;
+    color: #333;
+}
+
+.carrello img {
+    height: 65%;
+    display: block;
+}
+
+.profilo, .carrello {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+.profilo img {
+    height: 100%;
+    display: block;
+}
+
+.profilo p, .carrello p {
+    color: #E6E6E6;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #141920;
+    border-radius: 10px;
+    padding: 10px;
+    display: none;
+    z-index: 10;
+}
+
+.profilo {
+    position: relative;
+}
+
+.dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.dropdown-menu ul li {
+    padding: 5px 0;
+}
+
+.dropdown-menu ul li a {
+    text-decoration: none;
+    color: #E6E6E6;
+}
+
+.risultati-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 10px;
+    width: 100%;
+    background-color: #fff;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    display: none;
+    z-index: 100;
+    color: #333;
+}
+
+.risultati-container.show {
+    display: block;
+}
+
+.risultato {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.risultato:hover {
+    background-color: #f1f1f1;
+}
+
+.risultato img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.risultato h3 {
+    font-size: 16px;
+    color: #000;
+}
+
+.risultato .price {
+    font-size: 14px;
+    color: #777;
+}
+
+.watertv {
+    width: 100%;
+    height: auto;
+}
+
+.watertv img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.nbox {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 90%;
+    padding-top: 20px;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #141920;
+    border-radius: 10px;
+}
+
+.photobox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30%;
+    height: auto;
+}
+
+.photobox img {
+    max-width: 85%;
+    max-height: 85%;
+}
+
+.title p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #E6E6E6;
+    text-align: left;
+    padding: 10px;
+}
+
+.more {
+    margin-top: auto;
+    color: #E6E6E6;
+    text-align: left;
+    padding: 5px;
+}
+
+#footer {
+    background-color: #141920;
+    text-align: center;
+    padding: 15px;
+    height: 60px;
+    width: 100%;
+    margin-top: auto;
+}
+
+#footer p {
+    color: #E6E6E6;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    .top {
+        width: 100vw;
+        height: 60px;
+        gap: 10px;
+        padding: 10px 10px;
+    }
+
+    .top-left {
+        margin-right: 5%;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .ricerca {
+        width: auto;
+        height: 40px;
+    }
+
+    .ricerca input {
+        font-size: 14px;
+    }
+
+    .carrello img {
+        height: 30px;
+    }
+
+    .profilo, .carrello {
+        height: 30px;
+    }
+
+    .profilo p, .carrello p {
+        display: none;
+    }
+
+    .middle {
+        position: relative;
+        margin-bottom: 150px;
+    }
+
+    .nbox {
+        position: static;
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 10px;
+        box-sizing: border-box;
+        scrollbar-width: none;
+        gap: 15px;
+        width: 90%;
+        margin: auto;
+        padding-top: 15px;
+    }
+
+    .title p {
+        overflow-wrap: break-word;
+        white-space: normal;
+    }
+
+    .box {
+        width: 100%;
+        background-color: #141920;
+        border-radius: 10px;
+        padding: 8px;
+    }
+
+    .photobox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        width: 200px;
+        overflow: hidden;
+    }
+
+    .photobox img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .title p {
+        font-size: 20px;
+        padding: 8px;
+    }
+
+    .more {
+        font-size: 12px;
+    }
+}

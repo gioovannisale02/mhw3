@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dettagli Prodotto</title>
+  <link rel="stylesheet" href="prodotto.css">
+  <script src="dettagli.js" defer></script>
+  <script src="apiconvertitore.js" defer></script>
+  <script src="apistore.js" defer></script>
+</head>
+<body>
+    <div class="top">
+        <div class="logo">
+            <a href="mhw1.html">
+                <img src="assets/logo.svg" alt="">
+            </a>
+        </div>
+
+        <div class="ricerca">
+            <input type="text" placeholder="Cerca su Odiazon">
+            <div id="risultati" class="risultati-container"></div> 
+        </div>
+
+        <div class="top-left">
+            <div class="profilo">
+                <a href="mhw1.html">
+                    <p>Ciao, Giovanni</p>
+                </a>
+                    <img src="assets/user.svg" alt="">
+                    
+            </div>
+    
+            <div class="carrello">
+                <p>Carrello</p>
+                <img src="assets/carrello.svg" alt="">
+            </div>
+        </div>
+              
+    </div>
+  <div class="middle">
+    <div id="dettagli-prodotto"></div>
+    <div class="currency-conversion">
+        <h3>Converti la valuta</h3>
+        <label for="amount">Importo</label>
+        <input type="number" id="amount" placeholder="Inserisci importo" required>
+
+        <label for="from-currency">Da valuta</label>
+        <select id="from-currency">
+            <option value="EUR">EUR</option>
+            <option value="USD">USD</option>
+            <option value="GBP">GBP</option>
+            <option value="JPY">JPY</option>
+        </select>
+
+        <label for="to-currency">A valuta</label>
+        <select id="to-currency">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="JPY">JPY</option>
+        </select>
+
+        <button id="convert-btn">Converti</button>
+
+        <div id="conversion-result">
+            <p>Risultato: <span id="converted-amount"></span></p>
+        </div>
+  </div>
+  
+
+</body>
+</html>
