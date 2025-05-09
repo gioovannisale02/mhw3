@@ -1,35 +1,35 @@
 document.getElementById('convert-btn').addEventListener('click', function() {
-    const amount = document.getElementById('amount').value;
-    const fromCurrency = document.getElementById('from-currency').value;
-    const toCurrency = document.getElementById('to-currency').value;
+    const importo = document.getElementById('amount').value;
+    const valutaOrigine = document.getElementById('from-currency').value;
+    const valutaDestinazione = document.getElementById('to-currency').value;
 
-    if (amount === '' || isNaN(amount) || amount <= 0) {
+    if (importo === '' || isNaN(importo) || importo <= 0) {
         alert('Inserisci un importo valido');
         return;
     }
 
-    const apiKey = 'secret';
-    const url = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${fromCurrency}`;
+    const chiaveApi = 'secret';
+    const url = `https://v6.exchangerate-api.com/v6/${chiaveApi}/latest/${valutaOrigine}`;
 
     fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            if (data.result === "error") {
+        .then(risposta => risposta.json())
+        .then(dati => {
+            if (dati.result === "error") {
                 alert('Errore nel recupero dei dati da ExchangeRate-API');
                 return;
             }
 
-            const rate = data.conversion_rates[toCurrency];
-            if (!rate) {
+            const tasso = dati.conversion_rates[valutaDestinazione];
+            if (!tasso) {
                 alert('Errore: valuta di destinazione non supportata.');
                 return;
             }
 
-            const convertedAmount = (amount * rate).toFixed(2);
-            document.getElementById('converted-amount').textContent = `${convertedAmount} ${toCurrency}`;
+            const importoConvertito = (importo * tasso).toFixed(2);
+            document.getElementById('converted-amount').textContent = `${importoConvertito} ${valutaDestinazione}`;
         })
-        .catch(error => {
-            console.error('Errore durante la conversione della valuta:', error);
+        .catch(errore => {
+            console.error('Errore durante la conversione della valuta:', errore);
             alert('Si è verificato un errore nel recupero dei dati');
         });
 });
